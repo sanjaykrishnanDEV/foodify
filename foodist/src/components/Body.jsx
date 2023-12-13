@@ -16,7 +16,6 @@ const Body = () => {
     const restaurantList = ref(db, "foods/");
     onValue(restaurantList, (snapshot) => {
       const data = snapshot.val();
-      console.log(data);
       setAllRestaurants(data);
       setFilteredRestaurants(data);
     });
@@ -50,7 +49,7 @@ const Body = () => {
         ) : (
           Object.values(filteredRestaurants).map((restaurant) => (
             <Link to={"/restaurant/" + restaurant?.id} key={restaurant?.id}>
-              <Card info={restaurant} key={restaurant?.id} />
+              <Card info={restaurant}  />
             </Link>
           ))
         )}

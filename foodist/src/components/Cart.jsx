@@ -13,10 +13,8 @@ const Cart = () => {
     setCartData(data);
   }, [data]);
   if (!cartData) {
-    console.log(cartData);
     // const mapper = Object.values(cartData?.cartItems);
   }
-  console.log(cartData);
   function handleDelete(id) {
     dispatch(cartActions.deleteItem(id));
   }
@@ -73,13 +71,14 @@ const Cart = () => {
               </td>
               <td>{total}</td>
               <td>{qty}</td>
-              <Link to="/checkout">
-                <td>
+              <td>
+                <Link to="/checkout">
                   <button className="bg-green-700 rounded-md p-1 text-white">
                     checkout
                   </button>
-                </td>
-              </Link>
+                </Link>
+              </td>
+             
             </tr>
           </tfoot>
         </table>

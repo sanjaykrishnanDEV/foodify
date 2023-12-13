@@ -11,7 +11,6 @@ const Header = () => {
   const totalItems = useSelector((store) => store.cart.totalQty);
   const { currentUser } = useAuth();
   const navigate = useNavigate();
-  console.log(currentUser);
   async function handleSignout() {
     try {
       await signOut(auth);

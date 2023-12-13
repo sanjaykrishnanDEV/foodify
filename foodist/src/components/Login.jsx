@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
+import {  signInWithPopup} from "firebase/auth";
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setemail] = useState("");
@@ -23,7 +26,24 @@ const Login = () => {
       toast.error(errorMessage);
     }
   }
-
+  const provider = new GoogleAuthProvider();
+ function handleGoogleLogin(){
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+}
   return (
     <div>
       <Toaster />
@@ -102,8 +122,13 @@ const Login = () => {
                   >
                     Sign in
                   </button>
+                  <span
+                  onClick={handleGoogleLogin}
+                  className="mt-2  cursor-pointer hover:text-slate-200">
+                    sign in with google
+                  </span>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don’t have an account yet?{" "}
+                    Don’t have an account yet?
                     <Link to="/signup">
                       <span
                         href="#"
