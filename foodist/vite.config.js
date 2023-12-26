@@ -8,5 +8,5 @@ export default defineConfig({
     proxy:{
       '/api':'https://foodify-gkig.vercel.app/'
     }
-  }
+  }}
   )
