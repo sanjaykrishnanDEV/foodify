@@ -15,7 +15,7 @@ const useResMenuData = (
 
   async function getRestaurantInfo() {
     try {
-      const response = await fetch(swiggy_menu_api_URL + resId, { mode: 'cors' });
+      const response = await fetch(swiggy_menu_api_URL + resId, { mode: 'no-cors' });
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);
