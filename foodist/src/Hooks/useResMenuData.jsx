@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { options } from "../constants/constants";
 const useResMenuData = (
   swiggy_menu_api_URL,
   resId,
@@ -15,7 +15,12 @@ const useResMenuData = (
 
   async function getRestaurantInfo() {
     try {
-      const response = await fetch(swiggy_menu_api_URL + resId);
+      const response = await fetch(swiggy_menu_api_URL+resId, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+      console.log(response);
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);

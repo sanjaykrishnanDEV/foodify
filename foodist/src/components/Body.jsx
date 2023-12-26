@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import { db } from "../constants/firebase";
 import Shimmer from "./Shimmer";
-
+import useResMenuData from "../Hooks/useResMenuData";
+import { MENU_ITEM_TYPE_KEY, RESTAURANT_TYPE_KEY, swiggy_api_URL } from "../constants/constants";
 const Body = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -26,7 +27,14 @@ const Body = () => {
     });
     setFilteredRestaurants(filtered);
   }
-
+// console.log(filteredRestaurants)
+const [restaurant, menuItems] = useResMenuData(
+  swiggy_api_URL,
+  "64770",
+  RESTAURANT_TYPE_KEY,
+  MENU_ITEM_TYPE_KEY
+);
+console.log(restaurant);
   return (
     <div>
       <div className="m-4  flex justify-center">

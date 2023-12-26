@@ -91,10 +91,10 @@ const RestaurantMenu = () => {
           {Object.values(menuItems).map((item) => {
             return (
               <div
-                className="flex border rounded-md justify-between items-center bg-white mb-2 shadow-xl p-5"
+                className="flex mt-2  border rounded-md justify-between items-center bg-white mb-2 shadow-xl p-5"
                 key={item?.id}
               >
-                <div className="flex flex-col w-2/3 h-32">
+                <div className="flex flex-col w-2/3">
                   <span className="text-xl">{item?.name}</span>
                   <span className="text-xs">{item?.description}</span>
                   <p className="item-cost">
@@ -117,9 +117,9 @@ const RestaurantMenu = () => {
                     )}
                   </p>
                 </div>
-                <div className="flex flex-col w-1/3">
+                <div className="flex flex-col w-1/3 h-full">
                   <img
-                    className="rounded-md"
+                    className="rounded-md object-none"
                     src={ITEM_IMG_CDN_URL + item?.imageId}
                     alt={item?.name}
                   />
