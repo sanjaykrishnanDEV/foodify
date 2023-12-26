@@ -25,6 +25,7 @@ export const options = {
   headers: {
     Authorization: "",
   },
+  mode: "no-cors",
 };
 
 export const MENU_ITEM_TYPE_KEY =
