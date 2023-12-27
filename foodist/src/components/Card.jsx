@@ -27,7 +27,7 @@ const Card = (info) => {
         </h4>
 
         <span className=" text-xs ">{info.info?.costForTwo}</span>
-        <h4 className=" text-sm">{info.info?.sla.slaString}</h4>
+        <h4 className=" text-sm">{info.info?.sla?.slaString}</h4>
       </div>
     </div>
   );

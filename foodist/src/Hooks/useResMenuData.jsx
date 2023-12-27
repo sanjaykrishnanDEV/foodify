@@ -15,16 +15,11 @@ const useResMenuData = (
 
   async function getRestaurantInfo() {
     try {
-      const response = await fetch(
-        swiggy_menu_api_URL + resId,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          mode: "no-cors",
-        },
-        options
-      );
+      const response = await fetch(swiggy_menu_api_URL + resId, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        }
+      });
       console.log(response);
       if (!response.ok) {
         const err = response.status;
