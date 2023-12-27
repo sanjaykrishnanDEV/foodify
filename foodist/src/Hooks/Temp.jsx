@@ -1,37 +1,25 @@
-import { useEffect, useState } from "react";
-import { options } from "../constants/constants";
-
-const useResMenuData = (
-  swiggy_menu_api_URL,
-  resId,
-  RESTAURANT_TYPE_KEY,
-  MENU_ITEM_TYPE_KEY
-) => {
-  const [restaurant, setRestaurant] = useState(null);
-  const [menuItems, setMenuItems] = useState([]);
+import React from "react";
+import { useEffect } from "react";
+const Temp = () => {
   useEffect(() => {
     getRestaurantInfo();
   }, []);
-
+  
   async function getRestaurantInfo() {
     try {
-      const response = await fetch(
-        swiggy_menu_api_URL + resId,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          mode: "no-cors",
+      const response = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=65028", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
         },
-        options
-      );
-      console.log(response);
+        mode: "no-cors",
+      });
+
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);
       } else {
         const json = await response.json();
-
+        console.log(json)
         // Set restaurant data
         const restaurantData =
           json?.data?.cards
@@ -61,13 +49,10 @@ const useResMenuData = (
         setMenuItems(uniqueMenuItems);
       }
     } catch (err) {
-      setMenuItems([]);
-      setRestaurant(null);
       console.error(err);
     }
   }
-
-  return [restaurant, menuItems];
+  return <div>temp</div>;
 };
 
-export default useResMenuData;
+export default Temp;
