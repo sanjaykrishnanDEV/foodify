@@ -9,6 +9,7 @@ export default function Footer() {
           <span>Get connected with us on social networks:</span>
         </div>
         {/* <!-- Social network icons container --> */}
+        <Link to={"/"}>
         <div className="flex justify-center">
           <a className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
@@ -75,6 +76,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
+        </Link>
       </div>
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
@@ -205,8 +207,8 @@ export default function Footer() {
             ❤sanjaykrishnan❤
           </a>
         </div>
-        <div className="flex flex-col">
-          <span>demo credentials</span>
+        <div>
+          <span>demo credentials</span>4
           <span>email:testuser@gmail.com</span>
           <span>password: testtest</span>
         </div>
