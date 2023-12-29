@@ -205,8 +205,8 @@ export default function Footer() {
             ❤sanjaykrishnan❤
           </a>
         </div>
-        <div>
-          <span>demo credentials</span>4
+        <div className="flex flex-col">
+          <span>demo credentials</span>
           <span>email:testuser@gmail.com</span>
           <span>password: testtest</span>
         </div>
