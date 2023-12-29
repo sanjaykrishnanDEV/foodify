@@ -63,6 +63,9 @@ const Header = () => {
 
         {currentUser?.email ? (
           <>
+            <Link to={"/profile"}>
+              <button>My profile</button>
+            </Link>
             <Link>
               <button onClick={handleSignout}>Sign out</button>
             </Link>
