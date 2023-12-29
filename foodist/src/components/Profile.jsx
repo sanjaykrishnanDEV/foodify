@@ -38,7 +38,7 @@ const Profile = () => {
       .catch((error) => {
         // The write failed...
       });
-    alert(currentUser.uid);
+    
   }
   return (
     <div className=" h-[60vh] flex justify-center overflow-hidden items-center">
