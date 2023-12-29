@@ -15,8 +15,8 @@ const Profile = () => {
     const data = await ref(db, "users/" + currentUser.uid);
     onValue(data, (snapshot) => {
       const users = snapshot.val();
-      setusers(users);
-      console.log(users);
+      setusers(()=>users);
+     
     });
   }
   useEffect(() => {
