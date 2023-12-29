@@ -198,11 +198,18 @@ export default function Footer() {
       </div>
 
       {/* <!--Copyright section--> */}
-      <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
-        <span>© 2023 Copyright:</span>
-        <a className="font-semibold text-neutral-600 dark:text-neutral-400">
-          ❤sanjaykrishnan❤
-        </a>
+      <div className="flex justify-between bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+        <div>
+          <span>© 2023 Copyright:</span>
+          <a className="font-semibold text-neutral-600 dark:text-neutral-400">
+            ❤sanjaykrishnan❤
+          </a>
+        </div>
+        <div>
+          <span>demo credentials</span>4
+          <span>email:testuser@gmail.com</span>
+          <span>password: testtest</span>
+        </div>
       </div>
     </footer>
   );
