@@ -7,7 +7,7 @@ const Checkout = () => {
   const [discount, setDiscount] = useState(15);
   const totalItems = useSelector((store) => store.cart.totalQty);
   const totalAmount = useSelector((store) => store.cart.totalAmount);
-
+     const navigate = useNavigate();
   useEffect(() => {
     if (totalAmount > 100) {
       setDiscount(0);
@@ -16,7 +16,7 @@ const Checkout = () => {
   function handleSubmit(){
     if(totalAmount>0){
     toast.success("order placed, Thank you 🙏");
-     const navigate = useNavigate();
+  
      navigate("/");
     }
     else{
