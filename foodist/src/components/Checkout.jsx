@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 import {toast, Toaster} from "react-hot-toast";
 const Checkout = () => {
   const [discount, setDiscount] = useState(15);
@@ -13,7 +13,13 @@ const Checkout = () => {
     }
   }, [totalAmount]);
   function handleSubmit(){
-    toast.success("order placed");
+    if(totalAmount>0){
+    toast.success("order placed, Thank you 🙏");
+      <Navigate to="/"/>
+    }
+    else{
+      toast.error("No items in cart, What about a briyani🛐")
+    }
   }
   return (
     <div className="flex flex-row p-10 flex-wrap justify-evenly items-center ">
