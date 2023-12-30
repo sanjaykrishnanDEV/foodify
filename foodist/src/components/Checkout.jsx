@@ -16,7 +16,6 @@ const Checkout = () => {
   function handleSubmit(){
     if(totalAmount>0){
     toast.success("order placed, Thank you 🙏");
-  
      navigate("/");
     }
     else{
