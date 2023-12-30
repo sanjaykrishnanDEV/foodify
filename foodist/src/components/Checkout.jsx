@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {toast, Toaster} from "react-hot-toast";
 const Checkout = () => {
   const [discount, setDiscount] = useState(15);
   const totalItems = useSelector((store) => store.cart.totalQty);
@@ -11,8 +12,12 @@ const Checkout = () => {
       setDiscount(0);
     }
   }, [totalAmount]);
+  function handleSubmit(){
+    toast.success("order placed");
+  }
   return (
     <div className="flex flex-row p-10 flex-wrap justify-evenly items-center ">
+      <Toaster/>
       <div className=" w-1/2 h-fit">
         <form className="flex flex-col py-3 p-2 text-xl">
           <p>Billing Information</p>
@@ -53,7 +58,9 @@ const Checkout = () => {
           Total:{totalItems > 0 ? totalAmount + discount : 0}
         </h1>
         <hr />
-        <button className="bg-red-500 rounded-md p-1 text-lime-50 mt-2 w-full">
+        <button
+          onClick={handleSubmit}
+          className="bg-red-500 rounded-md p-1 text-lime-50 mt-2 w-full">
           Place Order
         </button>
         <Link to={"/"}>
