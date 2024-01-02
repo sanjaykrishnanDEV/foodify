@@ -18,6 +18,14 @@ const Cart = () => {
   function handleDelete(id) {
     dispatch(cartActions.deleteItem(id));
   }
+  function handleminus(id){
+    //alert('love'+item.id)
+    dispatch(cartActions.minusItem(id))
+  }
+  function plusItem(id){
+    //alert('love'+item.id)
+    dispatch(cartActions.plusItem(id))
+  }
   return (
     <div className="min-h-[90vh]">
       <div className="flex justify-center">
@@ -32,7 +40,7 @@ const Cart = () => {
               <td scope="col">Item</td>
               <td scope="col">Dish Name</td>
               <td scope="col">Dish price</td>
-              <td scope="col">Quantity</td>
+              <td scope="col" className="text-center">Quantity</td>
               <td scope="col">Actions</td>
             </tr>
           </thead>
@@ -50,7 +58,24 @@ const Cart = () => {
                     <td>{item?.id}</td>
                     <td>{item?.name}</td>
                     <td>{item?.price}</td>
-                    <td>{item?.quantity}</td>
+                    <td>
+                      {" "}
+                      <div className="flex justify-around items-center">
+                        <button
+                          onClick={() => handleminus(item.id)}
+                          className="rounded-full border px-3 cursor-pointer bg-red-400 hover:bg-red-700"
+                        >
+                          -
+                        </button>
+                        {item.quantity}
+                        <button
+                          onClick={() => plusItem(item.id)}
+                          className="rounded-full border px-3 cursor-pointer bg-green-400 hover:bg-green-700"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
                     <td>
                       <button
                         onClick={() => handleDelete(item?.id)}
@@ -78,7 +103,6 @@ const Cart = () => {
                   </button>
                 </Link>
               </td>
-             
             </tr>
           </tfoot>
         </table>
