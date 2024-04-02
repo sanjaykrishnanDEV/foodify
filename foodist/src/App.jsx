@@ -4,7 +4,7 @@ function App() {
 useEffect(()=>({
   window.bentoSettings = {
   // Can be found in Data and Integrations page
-  appId: '<BENTO f05f65c9-7812-45fe-b9fe-0423b35406f3>',
+  appId: 'f05f65c9-7812-45fe-b9fe-0423b35406f3',
   // Accounts represent your customers or organizations.
   // For example, a company called "AcmeCo".
   // Or a company you would sell your product to.
