@@ -37,7 +37,7 @@ useEffect(()=>({
     // [additionalAttribute: string]: boolean | Date | number | string
   },
 };
-}))
+}),[])
   return (
     <>
     <Layout/>
