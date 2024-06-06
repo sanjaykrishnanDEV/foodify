@@ -48,6 +48,7 @@ const Login = () => {
   return (
     <div>
       <Toaster />
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
       <div>
         <section className="bg-gray-50 dark:bg-gray-900">
